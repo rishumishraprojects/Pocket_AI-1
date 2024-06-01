@@ -8,14 +8,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/botChatView"
         android:background="@drawable/rounded_corner"
-        android:backgroundTint="#1E88E5"
+        android:backgroundTint="#ddddff"
         android:padding="8dp"
         android:layout_marginEnd="80dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/botTextView"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="18sp"
             android:text="Hiii How are you?/"/>
     </LinearLayout>
@@ -25,14 +25,14 @@
         android:layout_alignParentEnd="true"
         android:id="@+id/UserChatView"
         android:background="@drawable/rounded_corner"
-        android:backgroundTint="#7CB342"
+        android:backgroundTint="#d9ffdd"
         android:padding="8dp"
         android:layout_marginStart="80dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/UserTextView"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="18sp"
             android:text="Hiii How are you?/"/>
     </LinearLayout>
