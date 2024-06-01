@@ -7,7 +7,23 @@
     android:layout_height="match_parent"
     tools:context=".Chat.ChatActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:id="@+id/header_title">
+        <TextView
+            android:paddingTop="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Pocket_AI"
+            android:textSize="45sp"
+            android:gravity="center"
+            android:textColor="#734F96"
+            android:background="@drawable/header_corner"/>
+    </RelativeLayout>
+
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/header_title"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/chatRecyclerView"
@@ -24,7 +40,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/message_edit_text"
             android:layout_centerInParent="true"
-            android:hint="Ask ME!!!"
+            android:hint="Your Question"
             android:layout_toLeftOf="@+id/sendButton"
             android:background="@drawable/rounded_corner"
             android:padding="20dp"/>
