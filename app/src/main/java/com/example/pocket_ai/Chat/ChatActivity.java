@@ -10,11 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -27,22 +23,8 @@ import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Executor;
-
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.MediaType;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
 
 public class ChatActivity extends AppCompatActivity {
 
@@ -111,7 +93,7 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     void callApi(String questions) {
-        GenerativeModel gm = new GenerativeModel( "gemini-1.5-flash", buildConfig.apiKey);
+        GenerativeModel gm = new GenerativeModel("gemini-1.5-pro", BuildConfig.apiKey);
         GenerativeModelFutures model = GenerativeModelFutures.from(gm);
 
         Content content = new Content.Builder()
@@ -131,7 +113,7 @@ public class ChatActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Throwable t) {
-                addToChat("ERROR: "+t.toString(),Message.SENT_BY_BOT);
+                addToChat("ERROR: "+ t,Message.SENT_BY_BOT);
             }
         },this.getMainExecutor());
 
