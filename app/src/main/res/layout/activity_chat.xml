@@ -21,7 +21,21 @@
             android:textColor="#734F96"
             android:background="@drawable/header_corner"/>
     </RelativeLayout>
-
+<ImageView
+    android:layout_centerInParent="true"
+    android:src="@mipmap/ic_bot_round"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:id="@+id/gayab"/>
+    <TextView
+        android:id="@+id/gayb2"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"
+        android:text="I AM Here To Help"
+        android:layout_below="@+id/gayab"
+        android:layout_marginStart="105dp"
+        android:textSize="18sp"/>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_below="@id/header_title"
         android:layout_width="match_parent"

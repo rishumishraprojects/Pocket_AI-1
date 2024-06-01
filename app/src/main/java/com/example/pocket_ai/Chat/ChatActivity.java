@@ -1,9 +1,12 @@
 package com.example.pocket_ai.Chat;
 
+import static android.view.View.GONE;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -48,9 +51,9 @@ public class ChatActivity extends AppCompatActivity {
     MessageAdapter messageAdapter;
     EditText editText;
     List<Message> messageList;
-    public static final MediaType JSON = MediaType.get("application/json");
-    OkHttpClient client = new OkHttpClient();
     BuildConfig buildConfig;
+    ImageView imageView;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,12 +65,18 @@ public class ChatActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.chatRecyclerView);
         imageButton = findViewById(R.id.sendButton);
         editText = findViewById(R.id.message_edit_text);
+        imageView = findViewById(R.id.gayab);
+        textView = findViewById(R.id.gayb2);
+
 
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String question = editText.getText().toString().trim();
+                imageView.setVisibility(GONE);
+                textView.setVisibility(GONE);
                 addToChat(question, Message.SENT_BY_ME);
+                addToChat("Typing...",Message.SENT_BY_BOT);
                 callApi(question);
                 editText.setText("");
 
@@ -115,7 +124,9 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public void onSuccess(GenerateContentResponse result) {
                 String resultText = result.getText();
-                addToChat(resultText, Message.SENT_BY_BOT);
+                String strNew = resultText.replace("*", "");
+                addResponse(strNew);
+
             }
 
             @Override
