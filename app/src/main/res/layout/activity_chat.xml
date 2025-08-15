@@ -34,14 +34,18 @@
         android:layout_height="wrap_content"
         android:text="I AM Here To Help"
         android:layout_below="@+id/gayab"
-        android:layout_marginStart="105dp"
+        android:layout_marginStart="120dp"
         android:textSize="18sp"/>
+
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_below="@id/header_title"
+        android:id="@+id/chatRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/chatRecyclerView"
-        android:layout_above="@+id/bottomLayout"/>
+        android:layout_above="@+id/bottomLayout"
+        android:layout_below="@id/header_title"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="-1dp" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:background="@drawable/rounded_corner"

@@ -93,7 +93,7 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     void callApi(String questions) {
-        GenerativeModel gm = new GenerativeModel("gemini-1.5-pro", BuildConfig.apiKey);
+        GenerativeModel gm = new GenerativeModel("gemini-2.0-flash", BuildConfig.apiKey);
         GenerativeModelFutures model = GenerativeModelFutures.from(gm);
 
         Content content = new Content.Builder()
